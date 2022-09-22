@@ -27,8 +27,22 @@ void ajouterProduit(produit * p , int size){
 	printf("entrer la qunatite du produit:\n");
 	scanf("%d",&p[size].quantite);
 	printf("\n");
-	
+	size++;
 }
+void ajouterPlusieProduit(produit * p , int size,int nbr){   
+for(i=0;i<nbr;i++){
+	printf("entrer le nom du produit:\n");
+	scanf("%s", p[size].nom);
+	printf("entrer le code du produit:\n");
+	scanf("%d",&p[size].code);
+	printf("entrer le prix du produit:\n");
+	scanf("%f",&p[size].prix);
+	printf("entrer la qunatite du produit:\n");
+	scanf("%d",&p[size].quantite);
+	printf("\n");
+	}
+}
+
 
 produit* saisie (produit *p, int a, int b){
 	int i;
@@ -94,7 +108,7 @@ produit* triNom(produit *p, int n){
 	return p;
 }
 
-date* achat(produit *p, date *d, int n, int s){
+/*date* achat(produit *p, date *d, int n, int s){
 	int i,j;
 	int quantite, code;
 	printf("entrer le code du produit:\n");
@@ -107,14 +121,14 @@ date* achat(produit *p, date *d, int n, int s){
 	print("entrer le jour:\n");
 	scanf("%d", d[i].jour);
 	print("entrer le mois:\n");
-	scanf("%d", d[i].mois*);
+	scanf("%d", d[i].mois);
 	print("entrer l''annee:\n");
 	scanf("%d", d[i].annee);
 	
 	
 		}
 	}
-}
+}*/
 
 
 
