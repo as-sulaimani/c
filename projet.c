@@ -1,13 +1,11 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <stdio.h> // DYAL "IN" W "OUT"
+#include <stdlib.h> // DYAL LES ALLOCATIONS DYNAMIQUE
+#include <string.h> //DYAL UNE CHAINE DE CARACTERE
 
-typedef struct{
-	
+typedef struct{	
     int jour;
     int mois;
     int annee;
-
 }date;
 
 typedef struct prod{
@@ -17,10 +15,9 @@ typedef struct prod{
 		    float prix;
 		    int prixTtc ;
 		    date;
-
 }produit;
 
-void ajouterProduit(produit * p , int size){
+void ajouterProduit(produit * p , int size){   
 	printf("entrer le nom du produit:\n");
 	scanf("%s", p[size].nom);
 	printf("entrer le code du produit:\n");
@@ -30,6 +27,7 @@ void ajouterProduit(produit * p , int size){
 	printf("entrer la qunatite du produit:\n");
 	scanf("%d",&p[size].quantite);
 	printf("\n");
+	
 }
 
 produit* saisie (produit *p, int a, int b){
@@ -56,10 +54,9 @@ produit* saisie (produit *p, int a, int b){
 			printf("%s\n", p[i].nom);
 			printf("%f\n", p[i].prix);
 			printf("%d\n", p[i].quantite);
-			printf("\n");
-		}
-	}
-					
+			printf("\n");			
+			}
+		}			
 		produit* triPrix(produit *p, int n){
 			int i,j;
 			produit tmp;
@@ -70,7 +67,7 @@ produit* saisie (produit *p, int a, int b){
 				 	p[j]= p[j+1];
 				 	p[j+1]= tmp;
 				 	
-				 }
+				 	}
 				}
 			}
 			
@@ -97,7 +94,27 @@ produit* triNom(produit *p, int n){
 	return p;
 }
 
-produit* 
+date* achat(produit *p, date *d, int n, int s){
+	int i,j;
+	int quantite, code;
+	printf("entrer le code du produit:\n");
+	scanf("%d", &code);
+	printf("donner la quantite du produit:\n");
+	scanf("%d", &quantite);
+	for (i=0; i<s; i++){
+		if (p[i].code == code){
+			p[i].quantite == quantite;
+	print("entrer le jour:\n");
+	scanf("%d", d[i].jour);
+	print("entrer le mois:\n");
+	scanf("%d", d[i].mois*);
+	print("entrer l''annee:\n");
+	scanf("%d", d[i].annee);
+	
+	
+		}
+	}
+}
 
 
 
@@ -106,18 +123,13 @@ int main(){
 	int choixTri;
 	produit date;
 	produit *p;
-	p= malloc(n*sizeof(produit));
-	
-	
+	p= malloc(n*sizeof(produit));	
 			char name[20];
 			int choix;
 			int prix;
 			int code;
-			int quantite;
-			
-			
-	do {
-	
+			int quantite;						
+do {
 	printf("**Ajouter un nouveau produit  					1\n");
 	printf("**Ajouter plusieurs produits  					2\n");
 	printf("**Lister les produits         					3\n");
@@ -132,7 +144,7 @@ int main(){
 	printf("**Le Min des prix des produits vendus           12\n");
 	scanf("%d",&choix);
 	
-	switch (choix){
+switch (choix){
 	case 1:
 		n = 0;
 	    if(n==0){
@@ -141,15 +153,12 @@ int main(){
 			p= malloc(n* sizeof(produit));
 			p=saisie(p,o,n);
 		}
-		
 		else {
 			o = n;
 			n += 1;
 			p=realloc(p,n);
 			p=saisie(p,o,n);
 		}
-	    
-	    
 	break;
 	case 2:
 		printf("entrer le nombre des produits : \n");
@@ -159,21 +168,17 @@ int main(){
 			n = nbr;
 			p= malloc(n* sizeof(produit));
 			p= saisie (p,o,n);
-		}
-		
+		}		
 		else {
 			o = n;
 			n += nbr;
-			p=realloc(p,n);
-			
-		}
-
+			p=realloc(p,n);	
+			}
 		break;
-		case 3 :
-			
+		
+		case 3 :			
 			printf("1 tri par nom \t 2 Tri par prix ");
-			scanf("%d",&choixTri);
-			
+			scanf("%d",&choixTri);			
 			switch(choixTri){
 				case 1: 
 					p = triNom(p, n);
@@ -185,23 +190,17 @@ int main(){
 					printf("Choix invalide \n");
 					break;
 			}
-			
 			affichage(p,n);
-		
-			
-			
         break;
-
-
-
-
-
-
-
+        
+		case 4:
+			printf("donner la date:\n");
+			
+			
 	}
 }
 	
-		while(choix != 13);
+while(choix != 13);
 	
 	
 	

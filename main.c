@@ -90,7 +90,7 @@ int main()
     if (choice == 4){
         printf("\nenter the product code :  " );
         scanf("%d",&buyByCode);
-        printf("\nenter the product quantity that got sold :  " );
+        printf("\n enter the product quantity that got sold :  " );
         scanf("%d",&quantitySold);
          for( i = 0;i<z;i++){
             if (data[i].code == buyByCode ){
